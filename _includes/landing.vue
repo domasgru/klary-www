@@ -41,7 +41,7 @@
             <div class="card">
                 <h1 class="title">Personal feedback sharing platform</h1>
                 <p class="subtitle">Give, receive, and discuss feedbacks in one place.</p>
-                <img class="image" :src="'./img/landing-image.png'" />
+                <img class="image" :src="'./img/landing-image.jpg'" />
             </div>
         </div>
     </div>
@@ -52,11 +52,13 @@
     position: absolute;
     left: -300px;
     bottom: -300px;
+    z-index: 0;
 }
 .ellipse-right {
     position: absolute;
     top: -300px;
     right: -100px;
+    z-index: 0;
 }
 .landing {
     position: relative;
@@ -75,6 +77,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 16px;
+    z-index: 1;
 }
 
 .signin {
@@ -90,6 +93,7 @@
     justify-content: center;
     padding: 0 16px 32px 16px;
     width: 100%;
+    z-index: 1;
 }
 
 .card {
@@ -128,6 +132,8 @@
     left: 0;
     right: 0;
     margin: auto;
-    
+    border-top-left-radius:20px;
+    border-top-right-radius:20px;
+    overflow: hidden;
 }
 </style>

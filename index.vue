@@ -2,9 +2,11 @@
   <html lang="en">
     <head>
       <meta charset="utf-8">
-      <title>Demo: Vue and Eleventy</title>
+      <meta name="description" content="Personal feedback sharing platform">
+      <title>Kuri - personal feedback sharing platform</title>
       <link rel="preconnect" href="https://fonts.gstatic.com">
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <style v-html="css"/>
     </head>
     <body>

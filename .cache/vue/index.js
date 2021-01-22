@@ -28,7 +28,7 @@ var __vue_render__ = function() {
     { attrs: { lang: "en" } },
     [
       _vm._ssrNode(
-        '<head><meta charset="utf-8"> <title>Demo: Vue and Eleventy</title> <link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"> <style>' +
+        '<head><meta charset="utf-8"> <meta name="description" content="Personal feedback sharing platform"> <title>Kuri - personal feedback sharing platform</title> <link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <style>' +
           _vm._s(_vm.css) +
           "</style></head> "
       ),
@@ -45,7 +45,7 @@ __vue_render__._withStripped = true;
   /* scoped */
   const __vue_scope_id__ = undefined;
   /* module identifier */
-  const __vue_module_identifier__ = "data-v-2aa584bf";
+  const __vue_module_identifier__ = "data-v-4eb678dc";
   /* functional template */
   const __vue_is_functional_template__ = false;
   /* style inject */
