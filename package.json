@@ -1,0 +1,26 @@
+{
+  "name": "kuri-www",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ELEVENTY_EXPERIMENTAL=true npx @11ty/eleventy --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/domasgru/kuri-www.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/domasgru/kuri-www/issues"
+  },
+  "homepage": "https://github.com/domasgru/kuri-www#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^0.11.1",
+    "@11ty/eleventy-plugin-vue": "^0.2.2",
+    "clean-css": "^4.2.3"
+  }
+}
