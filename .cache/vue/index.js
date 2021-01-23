@@ -226,7 +226,7 @@ var __vue_render__$1 = function() {
     { attrs: { lang: "en" } },
     [
       _vm._ssrNode(
-        '<head><meta charset="utf-8"> <meta name="description" content="Personal feedback sharing platform"> <title>Kuri - personal feedback sharing platform</title> <link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <style>' +
+        '<head><meta charset="utf-8"> <meta name="description" content="Personal feedback sharing platform"> <meta property="og:title" content="Personal feedback sharing platform"> <meta property="og:description" content="Give, receive, and discuss feedbacks in one place."> <meta property="og:image" content="https://kuriapp.com/img/ogimage.png"> <meta property="og:url" content="https://kuriapp.com/index.html"> <title>Kuri - personal feedback sharing platform</title> <link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <style>' +
           _vm._s(_vm.css) +
           "</style></head> "
       ),
@@ -243,7 +243,7 @@ __vue_render__$1._withStripped = true;
   /* scoped */
   const __vue_scope_id__$1 = undefined;
   /* module identifier */
-  const __vue_module_identifier__$1 = "data-v-4eb678dc";
+  const __vue_module_identifier__$1 = "data-v-f5c126f0";
   /* functional template */
   const __vue_is_functional_template__$1 = false;
   /* style inject */
