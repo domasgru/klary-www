@@ -39,9 +39,15 @@
         </div>
         <div class="card-wrapper">
             <div class="card">
-                <h1 class="title">Personal feedback sharing platform</h1>
-                <p class="subtitle">Give, receive, and discuss feedbacks in one place.</p>
-                <img class="image" :src="'./img/landing-image.jpg'" />
+                <div class="text-wrapper">
+                    <h1 class="title">Personal feedback sharing platform</h1>
+                    <p class="subtitle">Give, receive, and discuss feedbacks in one place.</p>
+                </div>
+                <picture>
+                    <source media="(min-width: 768px)" :srcset="'./img/landing-image.webp'">
+                    <source :srcset="'./img/landing-image-mobile.webp'">
+                    <img class="image" :src="'./img/landing-image.webp'">
+                </picture>
             </div>
         </div>
     </div>
@@ -101,6 +107,7 @@
     background: rgba(255, 255, 255, 0.5);
     border: 5px solid rgba(255, 255, 255, 0.5);
     border-radius: 24px;
+    max-height: 772px;
     max-width: 1360px;
     width: 100%;
     overflow: hidden;
@@ -135,5 +142,59 @@
     border-top-left-radius:20px;
     border-top-right-radius:20px;
     overflow: hidden;
+}
+
+@media screen and (min-height: 900px) {
+    .image {
+        bottom: 0;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    picture {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .landing {
+        height: auto;
+        min-height: 100%;
+    }
+    .header {
+        justify-content: center;
+    }
+
+    .signin {
+        display: none;
+    }
+
+    .card {
+        padding: 60px 0 0 0;
+    }
+
+    .text-wrapper {
+        padding: 0 11px;
+    }
+
+    .title {
+        max-width: 296px;
+        font-size: 32px;
+        line-height: 40px;
+        margin-bottom: 24px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+        line-height: 24px;
+        max-width: 296px;
+        margin-bottom: 84px;
+    }
+
+    .image {
+        width: calc(100% - 30px);
+        position: static;
+        margin: 0;
+        border-top-right-radius: 0;
+    }
 }
 </style>
