@@ -56,21 +56,23 @@
 <style>
 .ellipse-left {
     position: absolute;
-    left: -300px;
-    bottom: -300px;
+    left: -410px;
+    bottom: -330px;
     z-index: 0;
+    animation: float-left 15s ease infinite;
 }
 .ellipse-right {
     position: absolute;
-    top: -300px;
-    right: -100px;
+    top: -370px;
+    right: -250px;
     z-index: 0;
+    animation: float-right 15s ease infinite;
 }
 .landing {
     position: relative;
     width: 100%;
     height: 100%;
-    background: #E5E5E5;
+    background: #F5F5F7;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -97,6 +99,7 @@
     flex-grow: 1;
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 0 16px 32px 16px;
     width: 100%;
     z-index: 1;
@@ -135,7 +138,7 @@
     max-width: 1040px;
     width: 100%;
     position: absolute;
-    bottom: calc(100vh - 900px);
+    bottom: calc(100vh - 860px);
     left: 0;
     right: 0;
     margin: auto;
@@ -195,6 +198,30 @@
         position: static;
         margin: 0;
         border-top-right-radius: 0;
+    }
+}
+
+@keyframes float-right {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(60%);
+    }
+    100% {
+        transform: translateY(0)
+    }
+}
+
+@keyframes float-left {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-60%);
+    }
+    100% {
+        transform: translateY(0)
     }
 }
 </style>
