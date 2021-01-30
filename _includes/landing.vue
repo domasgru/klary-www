@@ -44,8 +44,10 @@
                     <p class="subtitle">Give, receive, and discuss feedbacks in one place.</p>
                 </div>
                 <picture>
-                    <source media="(min-width: 768px)" :srcset="'./img/landing-image.webp'">
-                    <source :srcset="'./img/landing-image-mobile.webp'">
+                    <source media="(min-width: 768px)" :srcset="'./img/landing-image.webp'" type="image/webp">
+                    <source media="(min-width: 768px)" :srcset="'./img/landing-image.png'" type="image/png">
+                    <source :srcset="'./img/landing-image-mobile.webp'" type="image/webp">
+                    <source :srcset="'./img/landing-image-mobile.png'" type="image/png">
                     <img class="image" :src="'./img/landing-image.webp'">
                 </picture>
             </div>
@@ -102,6 +104,7 @@
     align-items: center;
     padding: 0 16px 32px 16px;
     width: 100%;
+    height: 100%;
     z-index: 1;
 }
 
