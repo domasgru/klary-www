@@ -153,10 +153,8 @@
 
 @media screen and (max-width: 770px) {
     picture {
-        display: flex;
-        justify-content: flex-end;
+        text-align: right;
     }
-
     .landing {
         height: auto;
         min-height: 100%;

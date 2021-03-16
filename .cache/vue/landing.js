@@ -104,7 +104,7 @@ __vue_render__._withStripped = true;
   /* scoped */
   const __vue_scope_id__ = undefined;
   /* module identifier */
-  const __vue_module_identifier__ = "data-v-cd04beee";
+  const __vue_module_identifier__ = "data-v-b022443e";
   /* functional template */
   const __vue_is_functional_template__ = false;
   /* style inject */
