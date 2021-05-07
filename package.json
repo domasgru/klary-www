@@ -1,27 +1,21 @@
 {
   "name": "kuri-www",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.1",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ELEVENTY_EXPERIMENTAL=true npx @11ty/eleventy --serve",
-    "build": "ELEVENTY_EXPERIMENTAL=true npx @11ty/eleventy"
+    "dev": "svelte-kit dev",
+    "build": "svelte-kit build",
+    "start": "svelte-kit start",
+    "lint": "eslint --ignore-path .gitignore ."
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/domasgru/kuri-www.git"
+  "devDependencies": {
+    "@supabase/supabase-js": "^1.11.6",
+    "@sveltejs/adapter-node": "next",
+    "@sveltejs/adapter-static": "next",
+    "@sveltejs/kit": "next",
+    "eslint": "^7.22.0",
+    "eslint-plugin-svelte3": "^3.1.0",
+    "svelte": "^3.29.0",
+    "vite": "^2.1.0"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/domasgru/kuri-www/issues"
-  },
-  "homepage": "https://github.com/domasgru/kuri-www#readme",
-  "dependencies": {
-    "@11ty/eleventy": "^0.11.1",
-    "@11ty/eleventy-plugin-vue": "^0.2.2",
-    "clean-css": "^4.2.3"
-  }
+  "type": "module"
 }
