@@ -1,5 +1,5 @@
 <script>
-import Logo from '$/components/Logo.svelte'
+import Logo from '$/svg/Logo.svelte'
 </script>
 
 <div class="header">

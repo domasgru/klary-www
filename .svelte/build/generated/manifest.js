@@ -1,14 +1,18 @@
 const c = [
-	() => import("..\\..\\..\\src\\routes\\$layout.svelte"),
-	() => import("..\\components\\error.svelte"),
-	() => import("..\\..\\..\\src\\routes\\about\\index.svelte")
+	() => import("../../../src/routes/$layout.svelte"),
+	() => import("../components/error.svelte"),
+	() => import("../../../src/routes/index.svelte"),
+	() => import("../../../src/routes/index/Header.svelte")
 ];
 
 const d = decodeURIComponent;
 
 export const routes = [
-	// src/routes/about/index.svelte
-	[/^\/about\/?$/, [c[0], c[2]], [c[1]]]
+	// src/routes/index.svelte
+	[/^\/$/, [c[0], c[2]], [c[1]]],
+
+	// src/routes/index/Header.svelte
+	[/^\/index\/Header\/?$/, [c[0], c[3]], [c[1]]]
 ];
 
 export const fallback = [c[0](), c[1]()];

@@ -1,54 +1,75 @@
 {
   ".svelte/build/runtime/internal/start.js": {
-    "file": "start-8b41a6ea.js",
+    "file": "start-ea8d9ccf.js",
     "src": ".svelte/build/runtime/internal/start.js",
     "isEntry": true,
     "imports": [
-      "_vendor-8eb5184c.js"
+      "_vendor-c7844ae4.js"
     ],
     "dynamicImports": [
       "src/routes/$layout.svelte",
       ".svelte/build/components/error.svelte",
-      "src/routes/about/index.svelte"
+      "src/routes/index.svelte",
+      "src/routes/index/Header.svelte"
     ],
     "css": [
       "assets/start-a8cd1609.css"
     ]
   },
   "src/routes/$layout.svelte": {
-    "file": "pages\\$layout.svelte-adc2be5e.js",
+    "file": "pages/$layout.svelte-b756b9a4.js",
     "src": "src/routes/$layout.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_vendor-8eb5184c.js"
+      "_vendor-c7844ae4.js"
     ],
     "css": [
-      "assets/pages\\$layout.svelte-7dc66399.css"
+      "assets/pages/$layout.svelte-ac45418a.css"
     ]
   },
   ".svelte/build/components/error.svelte": {
-    "file": "error.svelte-e83c958a.js",
+    "file": "error.svelte-3f66bfe3.js",
     "src": ".svelte/build/components/error.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_vendor-8eb5184c.js"
+      "_vendor-c7844ae4.js"
     ]
   },
-  "src/routes/about/index.svelte": {
-    "file": "pages\\about\\index.svelte-6a126f6b.js",
-    "src": "src/routes/about/index.svelte",
+  "src/routes/index.svelte": {
+    "file": "pages/index.svelte-b1cc4ff7.js",
+    "src": "src/routes/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_vendor-8eb5184c.js"
+      "_vendor-c7844ae4.js",
+      "_Logo-3233f12d.js"
     ],
     "css": [
-      "assets/pages\\about\\index.svelte-b99eceb0.css"
+      "assets/pages/index.svelte-4cb54d1f.css"
     ]
   },
-  "_vendor-8eb5184c.js": {
-    "file": "chunks/vendor-8eb5184c.js"
+  "src/routes/index/Header.svelte": {
+    "file": "pages/index/Header.svelte-60d4699b.js",
+    "src": "src/routes/index/Header.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-c7844ae4.js",
+      "_Logo-3233f12d.js"
+    ],
+    "css": [
+      "assets/pages/index/Header.svelte-7f0c6dcf.css"
+    ]
+  },
+  "_vendor-c7844ae4.js": {
+    "file": "chunks/vendor-c7844ae4.js"
+  },
+  "_Logo-3233f12d.js": {
+    "file": "chunks/Logo-3233f12d.js",
+    "imports": [
+      "_vendor-c7844ae4.js"
+    ]
   }
 }
