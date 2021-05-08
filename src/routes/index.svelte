@@ -27,35 +27,42 @@
 	<title>Hello world!</title>
 </svelte:head>
 
-<main class="main">
-	<div class="main__logo">
-		<LogoImage class="main__logo-image" />
-		<Logo />
-	</div>
-	<div class="main__content">
-		<div class="main__left">
-			<div class="main__left-content">
-				<h1 class="main__title">
-					The new way of feedback sharing
-				</h1>
-				<p class="main__subtitle">
-					Be the first to know about our beta release by leaving your email.
-				</p>
-				<div class="email-input">
-					<input class="email-input__input" type="text" bind:value={email} placeholder="Your email address" />
-					<button class="email-input__button" on:click={insertEmail} >
-						<ArrowRight />
-					</button>
+<div class="scroll">
+	<main class="main">
+		<div class="main__logo">
+			<LogoImage class="main__logo-image" />
+			<Logo />
+		</div>
+		<div class="main__content">
+			<div class="main__left">
+				<div class="main__left-content">
+					<h1 class="main__title">
+						The new way of feedback sharing
+					</h1>
+					<p class="main__subtitle">
+						Be the first to know about our beta release by leaving your email.
+					</p>
+					<div class="email-input">
+						<input class="email-input__input" type="text" bind:value={email} placeholder="Your email address" />
+						<button class="email-input__button" on:click={insertEmail} >
+							<ArrowRight />
+						</button>
+					</div>
 				</div>
 			</div>
+			<div class="main__right">
+				<img class="main__dashboard-image" src={'images/dashboard.png'} alt="Dashboard">
+			</div>
 		</div>
-		<div class="main__right">
-			<img class="main__dashboard-image" src={'images/dashboard.png'} alt="Dashboard">
-		</div>
-	</div>
-</main>
-
+	</main>	
+</div>
 <style>
+.scroll {
+	height: 100%;
+	width: 100%;
+	max-height: 100vh;
+}
+
 .main {
 	height: 100%;
 	padding: 32px;
@@ -161,9 +168,49 @@
 	width: 100%;
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 720px) {
+	.scroll {
+		overflow-y: auto;
+		max-height: 100vh;
+	}
+	
+	.main {
+		padding: 32px 24px;
+		height: auto;
+	}
+
 	.main__content {
 		flex-direction: column;
+	}
+
+	.main__logo {
+		position: static;
+		margin-bottom: 64px;
+	}
+
+	.main__left, .main__right {
+		padding: 0;
+		text-align: center;
+		flex: 0;
+		height: auto;
+	}
+
+	.main__left {
+		align-items: center;
+	}
+
+	.main__title {
+		font-size: 40px;
+		line-height: 48px;
+	}
+
+	.main__subtitle {
+		font-size: 16px;
+		line-height: 24px;
+	}
+
+	.email-input {
+		margin-bottom: 64px;
 	}
 }
 </style>
