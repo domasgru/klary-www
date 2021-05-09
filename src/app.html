@@ -4,12 +4,13 @@
 		<meta charset="utf-8" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="preload" href="/scene.json" as="fetch" crossorigin>
 		%svelte.head%
 	</head>
 	<body>
 		<div id="svelte">%svelte.body%</div>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-        <script src="https://cdn.spline.design/lib/anime.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 		<script src="js/spline.runtime.min.js"></script>
         <script src="js/main.js"></script>
 	</body>
