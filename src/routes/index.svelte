@@ -51,12 +51,17 @@
 				</div>
 			</div>
 			<div class="main__right">
-				<img class="main__dashboard-image" src={'images/dashboard.png'} alt="Dashboard">
+				<!-- <img class="main__dashboard-image" src={'images/dashboard.png'} alt="Dashboard"> -->
+				<canvas id="canvas3d" width="1290" height="1230" style="width: 860px; height: 820px;"></canvas>
 			</div>
 		</div>
 	</main>	
 </div>
 <style>
+#canvas3d {
+	flex-basis: inherit;
+}
+
 .scroll {
 	height: 100%;
 	width: 100%;

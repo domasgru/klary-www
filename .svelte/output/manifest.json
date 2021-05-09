@@ -1,6 +1,6 @@
 {
   ".svelte/build/runtime/internal/start.js": {
-    "file": "start-ea8d9ccf.js",
+    "file": "start-8e85e1df.js",
     "src": ".svelte/build/runtime/internal/start.js",
     "isEntry": true,
     "imports": [
@@ -17,7 +17,7 @@
     ]
   },
   "src/routes/$layout.svelte": {
-    "file": "pages/$layout.svelte-b756b9a4.js",
+    "file": "pages\\$layout.svelte-2871177c.js",
     "src": "src/routes/$layout.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -25,11 +25,11 @@
       "_vendor-c7844ae4.js"
     ],
     "css": [
-      "assets/pages/$layout.svelte-ac45418a.css"
+      "assets/pages\\$layout.svelte-45c542c1.css"
     ]
   },
   ".svelte/build/components/error.svelte": {
-    "file": "error.svelte-3f66bfe3.js",
+    "file": "error.svelte-b1b4f0aa.js",
     "src": ".svelte/build/components/error.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -38,36 +38,36 @@
     ]
   },
   "src/routes/index.svelte": {
-    "file": "pages/index.svelte-b1cc4ff7.js",
+    "file": "pages\\index.svelte-e8a24356.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-c7844ae4.js",
-      "_Logo-3233f12d.js"
+      "_Logo-154cb472.js"
     ],
     "css": [
-      "assets/pages/index.svelte-4cb54d1f.css"
+      "assets/pages\\index.svelte-408be84f.css"
     ]
   },
   "src/routes/index/Header.svelte": {
-    "file": "pages/index/Header.svelte-60d4699b.js",
+    "file": "pages\\index\\Header.svelte-05c2755d.js",
     "src": "src/routes/index/Header.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-c7844ae4.js",
-      "_Logo-3233f12d.js"
+      "_Logo-154cb472.js"
     ],
     "css": [
-      "assets/pages/index/Header.svelte-7f0c6dcf.css"
+      "assets/pages\\index\\Header.svelte-d9a290d7.css"
     ]
   },
   "_vendor-c7844ae4.js": {
     "file": "chunks/vendor-c7844ae4.js"
   },
-  "_Logo-3233f12d.js": {
-    "file": "chunks/Logo-3233f12d.js",
+  "_Logo-154cb472.js": {
+    "file": "chunks/Logo-154cb472.js",
     "imports": [
       "_vendor-c7844ae4.js"
     ]

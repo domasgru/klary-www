@@ -3,6 +3,7 @@ node_modules
 .firebase
 /dist
 /build
+.svelte
 
 # local env files
 .env.local

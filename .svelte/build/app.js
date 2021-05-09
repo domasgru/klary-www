@@ -4,7 +4,7 @@ import { set_paths } from './runtime/paths.js';
 import { set_prerendering } from './runtime/env.js';
 import * as user_hooks from "./hooks.js";
 
-const template = ({ head, body }) => "<!DOCTYPE html>\n<html lang=\"en\">\n\t<head>\n\t\t<meta charset=\"utf-8\" />\n\t\t<link rel=\"icon\" href=\"/favicon.ico\" />\n\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n\t\t" + head + "\n\t</head>\n\t<body>\n\t\t<div id=\"svelte\">" + body + "</div>\n\t</body>\n</html>\n";
+const template = ({ head, body }) => "<!DOCTYPE html>\n<html lang=\"en\">\n\t<head>\n\t\t<meta charset=\"utf-8\" />\n\t\t<link rel=\"icon\" href=\"/favicon.ico\" />\n\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n\t\t" + head + "\n\t</head>\n\t<body>\n\t\t<div id=\"svelte\">" + body + "</div>\n\t\t<script src=\"https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js\"></script>\n        <script src=\"https://cdn.spline.design/lib/anime.min.js\"></script>\n\t\t<script src=\"js/spline.runtime.min.js\"></script>\n        <script src=\"js/main.js\"></script>\n\t</body>\n</html>\n";
 
 set_paths({"base":"","assets":"/."});
 
@@ -18,7 +18,7 @@ const d = decodeURIComponent;
 const empty = () => ({});
 
 const manifest = {
-	assets: [{"file":"favicon.ico","size":1150,"type":"image/vnd.microsoft.icon"},{"file":"images/dashboard.png","size":168873,"type":"image/png"},{"file":"robots.txt","size":67,"type":"text/plain"}],
+	assets: [{"file":"favicon.ico","size":1150,"type":"image/vnd.microsoft.icon"},{"file":"images/dashboard.png","size":168873,"type":"image/png"},{"file":"js/main.js","size":84,"type":"application/javascript"},{"file":"js/spline.runtime.min.js","size":496346,"type":"application/javascript"},{"file":"robots.txt","size":67,"type":"text/plain"}],
 	layout: "src/routes/$layout.svelte",
 	error: ".svelte/build/components/error.svelte",
 	routes: [
@@ -50,10 +50,10 @@ const get_hooks = hooks => ({
 const hooks = get_hooks(user_hooks);
 
 const module_lookup = {
-	"src/routes/$layout.svelte": () => import("../../src/routes/$layout.svelte"),".svelte/build/components/error.svelte": () => import("./components/error.svelte"),"src/routes/index.svelte": () => import("../../src/routes/index.svelte"),"src/routes/index/Header.svelte": () => import("../../src/routes/index/Header.svelte")
+	"src/routes/$layout.svelte": () => import("..\\..\\src\\routes\\$layout.svelte"),".svelte/build/components/error.svelte": () => import("./components\\error.svelte"),"src/routes/index.svelte": () => import("..\\..\\src\\routes\\index.svelte"),"src/routes/index/Header.svelte": () => import("..\\..\\src\\routes\\index\\Header.svelte")
 };
 
-const metadata_lookup = {"src/routes/$layout.svelte":{"entry":"/./_app/pages/$layout.svelte-b756b9a4.js","css":["/./_app/assets/pages/$layout.svelte-ac45418a.css"],"js":["/./_app/pages/$layout.svelte-b756b9a4.js","/./_app/chunks/vendor-c7844ae4.js"],"styles":null},".svelte/build/components/error.svelte":{"entry":"/./_app/error.svelte-3f66bfe3.js","css":[],"js":["/./_app/error.svelte-3f66bfe3.js","/./_app/chunks/vendor-c7844ae4.js"],"styles":null},"src/routes/index.svelte":{"entry":"/./_app/pages/index.svelte-b1cc4ff7.js","css":["/./_app/assets/pages/index.svelte-4cb54d1f.css"],"js":["/./_app/pages/index.svelte-b1cc4ff7.js","/./_app/chunks/vendor-c7844ae4.js","/./_app/chunks/Logo-3233f12d.js"],"styles":null},"src/routes/index/Header.svelte":{"entry":"/./_app/pages/index/Header.svelte-60d4699b.js","css":["/./_app/assets/pages/index/Header.svelte-7f0c6dcf.css"],"js":["/./_app/pages/index/Header.svelte-60d4699b.js","/./_app/chunks/vendor-c7844ae4.js","/./_app/chunks/Logo-3233f12d.js"],"styles":null}};
+const metadata_lookup = {"src/routes/$layout.svelte":{"entry":"/./_app/pages\\$layout.svelte-2871177c.js","css":["/./_app/assets/pages\\$layout.svelte-45c542c1.css"],"js":["/./_app/pages\\$layout.svelte-2871177c.js","/./_app/chunks/vendor-c7844ae4.js"],"styles":null},".svelte/build/components/error.svelte":{"entry":"/./_app/error.svelte-b1b4f0aa.js","css":[],"js":["/./_app/error.svelte-b1b4f0aa.js","/./_app/chunks/vendor-c7844ae4.js"],"styles":null},"src/routes/index.svelte":{"entry":"/./_app/pages\\index.svelte-e8a24356.js","css":["/./_app/assets/pages\\index.svelte-408be84f.css"],"js":["/./_app/pages\\index.svelte-e8a24356.js","/./_app/chunks/vendor-c7844ae4.js","/./_app/chunks/Logo-154cb472.js"],"styles":null},"src/routes/index/Header.svelte":{"entry":"/./_app/pages\\index\\Header.svelte-05c2755d.js","css":["/./_app/assets/pages\\index\\Header.svelte-d9a290d7.css"],"js":["/./_app/pages\\index\\Header.svelte-05c2755d.js","/./_app/chunks/vendor-c7844ae4.js","/./_app/chunks/Logo-154cb472.js"],"styles":null}};
 
 async function load_component(file) {
 	if (!module_lookup[file]) {
@@ -82,9 +82,9 @@ export function render(request, {
 		manifest,
 		load_component,
 		target: "#svelte",
-		entry: "/./_app/start-ea8d9ccf.js",
+		entry: "/./_app/start-8e85e1df.js",
 		css: ["/./_app/assets/start-a8cd1609.css"],
-		js: ["/./_app/start-ea8d9ccf.js","/./_app/chunks/vendor-c7844ae4.js"],
+		js: ["/./_app/start-8e85e1df.js","/./_app/chunks/vendor-c7844ae4.js"],
 		root,
 		hooks,
 		dev: false,
