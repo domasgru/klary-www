@@ -1,4 +1,5 @@
 <script>
+	import { onMount } from 'svelte';
 	import { createClient } from '@supabase/supabase-js'
 	import Logo from '$/svg/Logo.svelte'
 	import LogoImage from '$/svg/LogoImage.svelte'
@@ -7,6 +8,17 @@
 	const supabaseUrl = "https://iklqhrrxiyjfmaiskeym.supabase.co";
 	const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYxNzMwMzA5MiwiZXhwIjoxOTMyODc5MDkyfQ.JSXPBUiRbISJjIHiKfJK-0gsPWdRlZyZhuyHD2ClHEU'
 	const supabase = createClient(supabaseUrl, supabaseKey)
+
+	let canvasElement;
+	let isCanvasLoading = true;
+	onMount(() => {
+		const resizeObserver = new ResizeObserver(() => {
+			console.log('size changed')
+			isCanvasLoading = false;
+			window.app.init();
+		})
+		resizeObserver.observe(canvasElement)
+	})
 	 
 	let email = ''
 	let error = ''
@@ -51,8 +63,10 @@
 				</div>
 			</div>
 			<div class="main__right">
-				<!-- <img class="main__dashboard-image" src={'images/dashboard.png'} alt="Dashboard"> -->
-				<canvas id="canvas3d" width="1290" height="1230" style="width: 860px; height: 820px;"></canvas>
+			{#if isCanvasLoading}
+				<img class="main__dashboard-image" src={'images/dashboard.png'} alt="Dashboard">
+			{/if}
+			<canvas bind:this={canvasElement} class:show={!isCanvasLoading} id="canvas3d" width="1290" height="1230" style="width: 860px; height: 820px;"></canvas>
 			</div>
 		</div>
 	</main>	
@@ -60,8 +74,11 @@
 <style>
 #canvas3d {
 	flex-basis: inherit;
+	height: 0 !important;
 }
-
+#canvas3d.show {
+	height: auto !important;
+}
 .scroll {
 	height: 100%;
 	width: 100%;
