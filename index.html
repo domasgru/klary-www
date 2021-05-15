@@ -316,13 +316,20 @@
             const wrapper = document.querySelector('.main__right')
             window.addEventListener('load', () => {
                 const resizeObserver = new ResizeObserver(async (entries) => {
-                wrapper.classList.remove('show-only-image')
-                console.log(entries)
-                console.log('size changed')
+                setTimeout(() => {
+                    app.resize();
+                    wrapper.classList.remove('show-only-image')
+                }, 1000)
+                // if(entry.contentBoxSize[0].blockSize > 0) {
+                //wrapper.classList.remove('show-only-image')
+                //     console.log('size changed')
+                // }
+                
                 //await app.resize();
                 //isCanvasLoading = false;
                 })
                 resizeObserver.observe(canvasElement)
+                resizeObserver.observe(wrapper)
             })
 
             //debugger
