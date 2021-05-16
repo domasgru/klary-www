@@ -330,19 +330,12 @@
             //debugger
             const canvasElement = document.getElementById('canvas3d')
             const wrapper = document.querySelector('.main__right')
+            const image = document.querySelector('.main__dashboard-image')
             window.addEventListener('load', () => {
-                const resizeObserver = new ResizeObserver(async (entries) => {
-                //await app.init();
-                console.log(entries)
-                //wrapper.classList.remove('show-only-image')
-                
-                // if(entry.contentBoxSize[0].blockSize > 0) {
-                //wrapper.classList.remove('show-only-image')
-                //     console.log('size changed')
-                // }
-                
-                //await app.resize();
-                //isCanvasLoading = false;
+                const resizeObserver = new ResizeObserver(async ([entry]) => {
+                    if(Math.round(entry.borderBoxSize[0].blockSize) === image.offsetHeight) {
+                        wrapper.classList.remove('show-only-image')
+                    }
                 })
                 resizeObserver.observe(canvasElement)
             })
