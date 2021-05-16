@@ -311,15 +311,19 @@
                 </div>
             </main>	
         </div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+		<script src="js/spline.runtime.min.js"></script>
+        <script src="js/main.js"></script>
         <script>
+            //debugger
             const canvasElement = document.getElementById('canvas3d')
             const wrapper = document.querySelector('.main__right')
             window.addEventListener('load', () => {
                 const resizeObserver = new ResizeObserver(async (entries) => {
-                setTimeout(() => {
-                    app.resize();
-                    wrapper.classList.remove('show-only-image')
-                }, 1000)
+                //await app.init();
+                wrapper.classList.remove('show-only-image')
+                
                 // if(entry.contentBoxSize[0].blockSize > 0) {
                 //wrapper.classList.remove('show-only-image')
                 //     console.log('size changed')
@@ -334,9 +338,5 @@
 
             //debugger
         </script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-		<script src="js/spline.runtime.min.js"></script>
-        <script src="js/main.js"></script>
 	</body>
 </html>
