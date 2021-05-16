@@ -164,7 +164,7 @@
                 outline: 0;
                 border: none;
                 width: 100% !important;
-                height: 100% !important;
+                height: auto !important;
             }
             
             @media screen and (max-width: 720px) {
@@ -333,7 +333,9 @@
             const image = document.querySelector('.main__dashboard-image')
             window.addEventListener('load', () => {
                 const resizeObserver = new ResizeObserver(async ([entry]) => {
-                    if(Math.round(entry.borderBoxSize[0].blockSize) === image.offsetHeight) {
+                    //debugger
+                    const {width, height} = Array.isArray(entry.contentRect) ? entry.contentRect[0] : entry.contentRect;
+                    if((height / width) > 0.9) {
                         wrapper.classList.remove('show-only-image')
                     }
                 })
