@@ -5,9 +5,11 @@
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="preload" href="/scene.json" as="fetch" crossorigin>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700&display=swap" rel="stylesheet">
         <style>
             :root {
-                font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+                font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
                     'Open Sans', 'Helvetica Neue', sans-serif;
             }
 
@@ -19,6 +21,11 @@
                 box-sizing: border-box;
                 margin: 0;
                 padding: 0;
+            }
+
+            body {
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
             }
 
             .hide {
@@ -73,6 +80,7 @@
                 flex-direction: column;
                 max-width: 416px;
                 width: 100%;
+                align-items: start;
             }
             
             .main__title {
@@ -98,22 +106,55 @@
                 max-width: 400px;
                 width: 100%;
             }
-            .email-input__input {
+
+            .base-input__input-wrapper {
+                width: 100%;
+                border-radius: 10px;
+                border: 1px solid #E1E1E6;
+                overflow: hidden;
+                transition: 0.2s all ease;
+            }
+
+            .base-input__input-wrapper:hover {
+                border: 1px solid #C6C6CC;
+            }
+
+            .base-input__input-wrapper:focus-within {
+                border: 1px solid #511FDC;
+                box-shadow: 0 0 0 4px rgba(81, 31, 220, 0.2);
+            }
+
+            .base-input__input {
                 background: rgba(255, 255, 255, 0.8);
                 border: 1px solid #E1E1E6;
                 padding: 16px 64px 16px 16px;
-                border-radius: 10px;
                 font-size: 16px;
                 line-height: 24px;
-                font-family: Inter;
+                font-family: 'Inter';
+                outline: none;
+                width: 100%;
+                box-shadow: none;
+                border: none;
             }
-            .email-input__input::placeholder {
+            
+            .base-input__input::placeholder {
                 color: #919199;
             }
+
+            .main__submit-message {
+                padding: 16px 20px;
+                font-size: 16px;
+                line-height: 24px;
+                color: #511FDC;
+                background: #EDE8FA;
+                border-radius: 10px;
+                display: none;
+            }
+
             .email-input__button {
                 border: 0;
                 position: absolute;
-                top: 8px;
+                top: 9px;
                 right: 8px;
                 background: #511FDC;
                 padding: 10px;
@@ -121,6 +162,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                cursor: pointer;
             }
             
             .main__right {
@@ -167,7 +209,7 @@
                 height: auto !important;
             }
             
-            @media screen and (max-width: 720px) {
+            @media screen and (max-width: 768px) {
                 .scroll {
                     overflow-y: auto;
                     max-height: 100vh;
@@ -197,10 +239,15 @@
                 .main__left {
                     align-items: center;
                 }
+
+                .main__left-content {
+                    max-width: 366px;
+                }
             
                 .main__title {
                     font-size: 40px;
                     line-height: 48px;
+                    margin-bottom: 16px;
                 }
             
                 .main__subtitle {
@@ -210,6 +257,10 @@
             
                 .email-input {
                     margin-bottom: 64px;
+                }
+
+                .main__right {
+                    padding: 34px 0 34px 16px;
                 }
             }
         </style>
@@ -304,12 +355,17 @@
                                 Be the first to know about our beta release by leaving your email.
                             </p>
                             <div class="email-input">
-                                <input class="email-input__input" type="text" bind:value={email} placeholder="Your email address" />
-                                <button class="email-input__button" on:click={insertEmail} >
+                                <div class="base-input__input-wrapper">
+                                    <input class="base-input__input" type="text" spellcheck="false" placeholder="Your email address" />
+                                </div>
+                                <button class="email-input__button">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                         <path d="M8 16L14 10L8 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                 </button>
+                            </div>
+                            <div class="main__submit-message">
+                                Woo-hoo! We will contant with you soon 🙌
                             </div>
                         </div>
                     </div>
@@ -327,13 +383,11 @@
 		<script src="js/spline.runtime.min.js"></script>
         <script src="js/main.js"></script>
         <script>
-            //debugger
             const canvasElement = document.getElementById('canvas3d')
             const wrapper = document.querySelector('.main__right')
             const image = document.querySelector('.main__dashboard-image')
             window.addEventListener('load', () => {
                 const resizeObserver = new ResizeObserver(async ([entry]) => {
-                    //debugger
                     const {width, height} = Array.isArray(entry.contentRect) ? entry.contentRect[0] : entry.contentRect;
                     if((height / width) > 0.9) {
                         wrapper.classList.remove('show-only-image')
@@ -342,7 +396,33 @@
                 resizeObserver.observe(canvasElement)
             })
 
-            //debugger
+            function validateEmail(email) {
+                const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(String(email).toLowerCase());
+            }
+
+            function submitEmail() {
+                const email = document.querySelector('base-input__input').value.toLowerCase();
+                if(!email) {
+                    
+                }
+
+                const isEmailValid = validateEmail(email);
+
+
+                fetch('https://iklqhrrxiyjfmaiskeym.supabase.co/rest/v1/emails', {
+                    method: 'POST',
+                    headers: {
+                        'apiKey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYxNzMwMzA5MiwiZXhwIjoxOTMyODc5MDkyfQ.JSXPBUiRbISJjIHiKfJK-0gsPWdRlZyZhuyHD2ClHEU',
+                        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYxNzMwMzA5MiwiZXhwIjoxOTMyODc5MDkyfQ.JSXPBUiRbISJjIHiKfJK-0gsPWdRlZyZhuyHD2ClHEU',
+                        'Content-Type': 'application/json',
+                        'Prefer': 'return=minimal'
+                    },
+                    body: JSON.stringify({ email })
+                })
+            }
+
+            document.querySelector('.email-input__button').addEventListener('click', submitEmail)
         </script>
 	</body>
 </html>
