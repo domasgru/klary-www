@@ -22,7 +22,7 @@
             <p class="main__subtitle">
               Be the first to know about our beta release by leaving your email.
             </p>
-            <Input class="email-input" />
+            <Input class="main__email-input" />
           </div>
         </div>
         <div
@@ -255,7 +255,7 @@ if (!import.meta.env.SSR) {
     line-height: 24px;
   }
 
-  .email-input {
+  .main__email-input {
     margin-bottom: 64px;
   }
 
