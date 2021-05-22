@@ -56,11 +56,11 @@ const submitEmail = async () => {
   }
 
   try {
-    const response = await fetch('https://iklqhrrxiyjfmaiskeym.supabase.co/rest/v1/emails', {
+    const response = await fetch('https://qumwrdaeeznvdjultimn.supabase.co/rest/v1/emails', {
       method: 'POST',
       headers: {
-        'apiKey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYxNzMwMzA5MiwiZXhwIjoxOTMyODc5MDkyfQ.JSXPBUiRbISJjIHiKfJK-0gsPWdRlZyZhuyHD2ClHEU',
-        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYxNzMwMzA5MiwiZXhwIjoxOTMyODc5MDkyfQ.JSXPBUiRbISJjIHiKfJK-0gsPWdRlZyZhuyHD2ClHEU',
+        'apiKey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYyMTY3MDQ4NCwiZXhwIjoxOTM3MjQ2NDg0fQ.TXbkY4nhx7yXJav9HiKPth8blBZtdHW62Cgd0J9agWc',
+        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYyMTY3MDQ4NCwiZXhwIjoxOTM3MjQ2NDg0fQ.TXbkY4nhx7yXJav9HiKPth8blBZtdHW62Cgd0J9agWc',
         'Content-Type': 'application/json',
         'Prefer': 'return=minimal'
       },
@@ -74,6 +74,7 @@ const submitEmail = async () => {
 
     hasSubmitedEmail.value = true;
   } catch(error) {
+    setError('Something went wrong. Try again.')
     console.error(error)
   }
 }
