@@ -18,7 +18,7 @@
             <p class="main__subtitle">
               Be the first to know about our beta release by leaving your email.
             </p>
-            <Input />
+            <Input class="email-input" />
           </div>
         </div>
         <div class="main__right show-only-image">
@@ -213,12 +213,12 @@ if (!import.meta.env.SSR) {
   .main__right {
     flex: 0;
     height: auto;
-    padding: 0;
     text-align: center;
   }
 
   .main__left {
     align-items: center;
+    padding: 0;
   }
 
   .main__title {
@@ -233,6 +233,10 @@ if (!import.meta.env.SSR) {
 
   .email-input {
     margin-bottom: 64px;
+  }
+
+  .main__right {
+    padding: 34px 0;
   }
 }
 </style>
