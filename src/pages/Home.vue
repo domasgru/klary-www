@@ -80,10 +80,6 @@ if (!import.meta.env.SSR) {
 </script>
 
 <style lang="scss" scoped>
-.opacity {
-  opacity: 1;
-}
-
 .pulse {
   box-shadow: 0 0 0 0 rgba(81, 31, 220, 0.2);
   animation: pulse 0.3s ease;
@@ -104,11 +100,6 @@ if (!import.meta.env.SSR) {
   width: 100%;
   height: 100%;
   max-height: 100vh;
-  opacity: 0.8;
-
-  &--full-opacity {
-    opacity: 1;
-  }
 }
 
 .main {
