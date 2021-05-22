@@ -18,12 +18,16 @@
         {{ label }}
       </label>
       <div
-        class="base-input__input-wrapper"
         :style="styleVariables"
-        :class="{'base-input__input-wrapper--pulse': inputPulseAnimation}"
+        class="base-input__pulse-wrapper"
+        :class="{'base-input__pulse-wrapper--pulse': inputPulseAnimation}"
         @animationend="inputPulseAnimation = false"
       >
-        <slot />
+        <div
+          class="base-input__input-wrapper"
+        >
+          <slot />
+        </div>
       </div>
     </div>
     <span
@@ -139,6 +143,15 @@ export default {
     padding-bottom: 8px;
   }
 
+  &__pulse-wrapper {
+    border-radius: 10px;
+    box-shadow: 0 0 0 0 var(--outlineColor);
+
+    &--pulse {
+      animation: pulse 0.3s ease;
+    }
+  }
+
   &__input-wrapper {
     position: relative;
     display: flex;
@@ -158,10 +171,6 @@ export default {
     &:focus-within {
       border: 1px solid var(--primary);
       box-shadow: 0 0 0 4px var(--outlineColor);
-    }
-
-    &--pulse {
-      animation: pulse 0.4s ease;
     }
 
     #{$this}--error & {
