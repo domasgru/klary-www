@@ -18,6 +18,7 @@
           </div>
         </div>
         <div class="main__right show-only-image">
+          <div class="main__color-filler" />
           <img
             class="main__dashboard-image"
             src="/images/dashboard.png"
