@@ -1,6 +1,10 @@
 <template>
-  <div class="scroll">
-    <main class="main">
+  <div
+    class="scroll"
+  >
+    <main
+      class="main"
+    >
       <div class="main__logo">
         <img
           src="../assets/images/klaryLogo.png"
@@ -21,7 +25,13 @@
             <Input class="email-input" />
           </div>
         </div>
-        <div class="main__right show-only-image">
+        <div
+          class="main__right"
+          :class="{
+            'show-only-image': !isAppInitialized,
+            'pulse': isAppInitialized
+          }"
+        >
           <img
             class="main__dashboard-image"
             src="/images/dashboard.png"
@@ -40,8 +50,11 @@
 </template>
 
 <script setup>
+import {ref} from 'vue'
 import LogoText from '../assets/svg/klaryLogoText.svg';
 import Input from '../components/Input.vue'
+
+const isAppInitialized = ref(false)
 
 if (!import.meta.env.SSR) {
   const canvasElement = document.getElementById('canvas3d');
@@ -51,7 +64,7 @@ if (!import.meta.env.SSR) {
     // debugger
     const { width, height } = Array.isArray(entry.contentRect) ? entry.contentRect[0] : entry.contentRect;
     if ((height / width) > 0.9) {
-      wrapper.classList.remove('show-only-image');
+      isAppInitialized.value = true;
     }
   });
 
@@ -66,7 +79,22 @@ if (!import.meta.env.SSR) {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+.opacity {
+  opacity: 1;
+}
+
+.pulse {
+  box-shadow: 0 0 0 0 rgba(81, 31, 220, 0.2);
+  animation: pulse 0.3s ease;
+}
+
+@keyframes pulse {
+  to {
+    box-shadow: 0 0 0 12px rgba(81, 31, 220, 0);
+  }
+}
+
 .hide {
   height: 0;
   opacity: 0;
@@ -76,6 +104,11 @@ if (!import.meta.env.SSR) {
   width: 100%;
   height: 100%;
   max-height: 100vh;
+  opacity: 0.8;
+
+  &--full-opacity {
+    opacity: 1;
+  }
 }
 
 .main {
