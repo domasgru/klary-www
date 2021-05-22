@@ -47,11 +47,13 @@ const setError = (message) => {
 const submitEmail = async () => {
   if(!email.value) {
     setError('Enter your email')
+    window.umami.trackEvent(email.value, 'submit-email-empty-email')
     return
   }
 
   if(!validateEmail(email.value)) {
     setError('Please enter valid email')
+    window.umami.trackEvent(email.value, 'submit-email-invalid-email')
     return
   }
 
@@ -73,8 +75,10 @@ const submitEmail = async () => {
     }
 
     hasSubmitedEmail.value = true;
+    window.umami.trackEvent(email.value, 'submit-email')
   } catch(error) {
     setError('Something went wrong. Try again.')
+    window.umami.trackEvent(email.value, 'submit-email-server-error')
     console.error(error)
   }
 }
