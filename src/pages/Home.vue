@@ -245,6 +245,10 @@ if (!import.meta.env.SSR) {
     padding: 0;
   }
 
+  .main__left-content {
+    align-items: center;
+  }
+
   .main__title {
     font-size: 40px;
     line-height: 48px;
