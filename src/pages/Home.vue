@@ -2,7 +2,11 @@
   <div class="scroll">
     <main class="main">
       <div class="main__logo">
-        <LogoIcon class="main__logo-icon" />
+        <img
+          src="../assets/images/klaryLogo.png"
+          alt="Logo symbol"
+          class="main__logo-symbol"
+        >
         <LogoText class="main__logo-text" />
       </div>
       <div class="main__content">
@@ -36,8 +40,7 @@
 </template>
 
 <script setup>
-import LogoText from '../assets/svg/logo-text.svg';
-import LogoIcon from '../assets/svg/logo-icon.svg';
+import LogoText from '../assets/svg/klaryLogoText.svg';
 import Input from '../components/Input.vue'
 
 if (!import.meta.env.SSR) {
@@ -78,7 +81,7 @@ if (!import.meta.env.SSR) {
 .main {
   height: 100%;
   padding: 32px;
-  background: #fbfaff;
+  background: var(--light);
 }
 
 .main__logo {
@@ -90,12 +93,9 @@ if (!import.meta.env.SSR) {
   justify-content: center;
 }
 
-.main__logo-icon {
+.main__logo-symbol {
+  width: 40px;
   margin-right: 7px;
-}
-
-.main__logo-text {
-  margin-top: 4px;
 }
 
 .main__logo-image {
