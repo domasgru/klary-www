@@ -17,10 +17,10 @@
         <div class="main__left">
           <div class="main__left-content">
             <h1 class="main__title">
-              The new way of sharing feedback
+              The future of sharing feedback
             </h1>
             <p class="main__subtitle">
-              Be the first to know about our beta release by leaving your email.
+              Give, receive and clarify feedback in one place. Join the waitlist to get early access.
             </p>
             <Input class="main__email-input" />
           </div>
