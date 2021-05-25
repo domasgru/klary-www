@@ -29,7 +29,6 @@
           class="main__right"
           :class="{
             'show-only-image': !isAppInitialized,
-            'pulse': isAppInitialized
           }"
         >
           <img
