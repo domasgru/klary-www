@@ -26,7 +26,7 @@
     v-else
     class="email-input__success-message"
   >
-    Woo-hoo! We will contant with you soon 🙌
+    Woo-hoo! We will contact you soon 🙌
   </div>
 </template>
 
