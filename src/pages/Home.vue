@@ -20,9 +20,17 @@
               The future of sharing feedback
             </h1>
             <p class="main__subtitle">
-              Give, receive and clarify feedback in one place. Join the waitlist to get early access.
+              Give, receive and clarify feedback in one place. Sign up to try Klary beta today.
             </p>
-            <Input class="main__email-input" />
+            <BaseButton
+              class="main__get-started-button"
+              size="lg"
+            >
+              Get started
+            </BaseButton>
+            <div class="main__get-started-mobile">
+              Use desktop device to get started 🙏
+            </div>
           </div>
         </div>
         <div
@@ -51,7 +59,7 @@
 <script setup>
 import {ref} from 'vue'
 import LogoText from '../assets/svg/klaryLogoText.svg';
-import Input from '../components/Input.vue'
+import BaseButton from '../components/BaseButton.vue'
 
 const isAppInitialized = ref(false)
 
@@ -212,6 +220,10 @@ if (!import.meta.env.SSR) {
   object-position: center;
 }
 
+.main__get-started-mobile {
+  display: none;
+}
+
 @media screen and (max-width: 720px) {
   .scroll {
     max-height: 100vh;
@@ -258,8 +270,17 @@ if (!import.meta.env.SSR) {
     line-height: 24px;
   }
 
-  .main__email-input {
+  .main__get-started-button {
+    display: none;
+  }
+
+  .main__get-started-mobile {
+    display: block;
+    padding: 8px 16px;
     margin-bottom: 64px;
+    background: var(--grey-100);
+    border-radius: 10px;
+    line-height: 24px;
   }
 
   .main__right {
