@@ -25,6 +25,7 @@
             <BaseButton
               class="main__get-started-button"
               size="lg"
+              href="https://app.klary.co/login"
             >
               Get started
             </BaseButton>

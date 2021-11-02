@@ -102,6 +102,10 @@ export default {
   line-height: 20px;
 }
 
+a {
+  text-decoration: none;
+}
+
 .button {
   $this: &;
 
