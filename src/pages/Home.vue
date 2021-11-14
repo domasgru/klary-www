@@ -574,7 +574,7 @@ ul:not(:last-child) {
 
   .story__step {
     width: 100%;
-    max-width: none;
+    max-width: none !important;
     margin: 0 !important;
     transform: rotate(0) !important;
   }
