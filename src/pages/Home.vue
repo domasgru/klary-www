@@ -220,7 +220,7 @@ ul:not(:last-child) {
 
 .main {
   position: relative;
-  max-width: 1254px;
+  max-width: 1400px;
   padding: 32px;
   margin: auto;
   background: var(--light);
