@@ -13,7 +13,7 @@
         <div class="main__left">
           <div class="main__left-content">
             <h1 class="main__title">
-              The future of sharing feedback
+              Unleash the power of feedback
             </h1>
             <p class="main__subtitle">
               Give, receive and clarify feedback in one place. Join the waitlist to get early access.
@@ -106,7 +106,7 @@
             <ul>
               <li class="mb-16">
                 The process gets scattered across multiple platforms. 
-                To ask for the feedback we use some form tools, to clarify we go to a messaging app, to take notes yet another place.
+                To ask for the feedback we use some form tools, to clarify we go to a messaging app, to take notes we use yet another app.
               </li>
               <li>
                 None of those platforms are built for sharing feedback. 
@@ -135,6 +135,7 @@
       <a
         href="https://twitter.com/KlaryApp"
         title="Twitter link"
+        target="_blank"
         class="footer__twitter-link"
       >
         <TwitterLogo class="mr-8" /> Follow us on twitter
@@ -164,7 +165,7 @@ if (!import.meta.env.SSR) {
   const resizeObserver = new ResizeObserver(async ([entry]) => {
     // debugger
     const { width, height } = Array.isArray(entry.contentRect) ? entry.contentRect[0] : entry.contentRect;
-    if ((height / width) > 0.9) {
+    if ((height / width) > 0.9 && window.devicePixelRatio > 1) {
       isAppInitialized.value = true;
     }
   });
@@ -218,7 +219,10 @@ ul:not(:last-child) {
 }
 
 .main {
+  position: relative;
+  max-width: 1254px;
   padding: 32px;
+  margin: auto;
   background: var(--light);
 }
 
@@ -255,8 +259,9 @@ ul:not(:last-child) {
 .main__left {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  //justify-content: center;
   padding: 0 48px;
+  margin-top: 200px;
 }
 
 .main__left-content {
@@ -264,7 +269,7 @@ ul:not(:last-child) {
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
-  max-width: 416px;
+  max-width: 440px;
 }
 
 .main__title {
@@ -516,6 +521,7 @@ ul:not(:last-child) {
   .main__left {
     align-items: center;
     padding: 0;
+    margin: 0;
   }
 
   .main__left-content {
@@ -568,6 +574,7 @@ ul:not(:last-child) {
 
   .story__step {
     width: 100%;
+    max-width: none;
     margin: 0 !important;
     transform: rotate(0) !important;
   }
