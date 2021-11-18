@@ -110,7 +110,7 @@
               </li>
               <li>
                 None of those platforms are dedicated for sharing feedback. 
-                Form tools are more for massive surveys, messaging apps are more for day-to-day communication, 
+                Form apps are more for massive surveys, messaging apps are more for day-to-day communication, 
                 so sharing or clarifying feedback easily drowns in daily work-related chats.
               </li>
             </ul>
@@ -119,7 +119,7 @@
         </div>
         <div class="story__step">
           <div class="story__card">
-            5. We started creating Klary with the goal to build a complete platform for feedbacks, 
+            5. We started creating Klary with the goal to build a complete platform for feedbacks 
             that brings together the whole process and is fully dedicated to feedbacks.
           </div>
         </div>
