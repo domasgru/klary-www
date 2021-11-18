@@ -106,7 +106,7 @@
             <ul>
               <li class="mb-16">
                 The process gets scattered across multiple platforms. 
-                To ask for the feedback we use some form apps, to clarify we go to a messaging app, to take notes we use yet another app.
+                To ask for feedback we use some form apps, to clarify we go to a messaging app, to take notes we use yet another app.
               </li>
               <li>
                 None of those platforms are dedicated for sharing feedback. 
