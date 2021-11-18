@@ -63,7 +63,7 @@
       class="story"
     >
       <h2 class="h2 story__title">
-        Why we are creating Klary through the first principles:
+        Why we are creating Klary:
       </h2>
       <div class="story__container">
         <div class="story__step">
@@ -106,12 +106,12 @@
             <ul>
               <li class="mb-16">
                 The process gets scattered across multiple platforms. 
-                To ask for the feedback we use some form tools, to clarify we go to a messaging app, to take notes we use yet another app.
+                To ask for the feedback we use some form apps, to clarify we go to a messaging app, to take notes we use yet another app.
               </li>
               <li>
-                None of those platforms are built for sharing feedback. 
+                None of those platforms are dedicated for sharing feedback. 
                 Form tools are more for massive surveys, messaging apps are more for day-to-day communication, 
-                and sharing or clarifying feedback easily drowns in daily work-related chats.
+                so sharing or clarifying feedback easily drowns in daily work-related chats.
               </li>
             </ul>
           </div>
