@@ -75,7 +75,7 @@
         <div class="story__step">
           <div class="story__card">
             <div class="mb-32">
-              2. While sharing feedback we:
+              2. Lets define the flow of getting feedback and taking the most out of it:
             </div>
             <ul class="mb-16">
               <li>Ask for feedback</li>
@@ -119,8 +119,7 @@
         </div>
         <div class="story__step">
           <div class="story__card">
-            5. We started creating Klary with the goal to build a complete platform for feedbacks 
-            that brings together the whole process and is fully dedicated to feedbacks.
+            5. We started creating Klary - a complete platform for feedbacks.
           </div>
         </div>
       </div>
