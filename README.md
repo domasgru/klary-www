@@ -1,1 +1,1 @@
-(Klary)[https://klary.co]
+[Klary](https://klary.co)
